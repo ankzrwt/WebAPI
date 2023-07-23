@@ -70,5 +70,19 @@ namespace project1.Controllers
             }
             return null;
         }
+        [HttpDelete]
+        [Route("/deleteEmployee")]
+        public Employee deleteEmployee(int Id)
+        {
+            for(int i = 0; i < seedData.employees.Count; i++)
+            {
+                if (seedData.employees[i].Id == Id)
+                {
+                    seedData.employees.Remove(seedData.employees[i]);
+                    return null;
+                }
+            }
+            return null;
+        }
     }
 }
