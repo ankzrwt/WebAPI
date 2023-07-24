@@ -1,4 +1,5 @@
-﻿using project1.Model;
+﻿using Microsoft.AspNetCore.Authorization.Infrastructure;
+using project1.Model;
 
 namespace project1
 {
@@ -21,5 +22,23 @@ namespace project1
         }
 
     }
+
+    public class CreateBookData
+    {
+     
+        
+
+        public static CreateBookData instance = new CreateBookData();
+        public List<Book> books = new List<Book>();
+
+        public CreateBookData()
+        {
+            books.Add(new Book(1, "Lord of the rings", "King lost his land due to power of ring"));
+            books.Add(new Book(2, "The song of Ice and Fire", "Night King fucked up everyone"));
+            
+        }
+        
+    }
+
 
 }
